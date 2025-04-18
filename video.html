@@ -4,36 +4,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>10 Format Video | Fahry Akbar</title>
+    <title>10 Video Formats | Fahry Akbar</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
     <style>
          :root {
-            --primary-color: #3d84b0;
-            --secondary-color: #339ea8;
-            --text-color: #f1e1c6;
-            --text-light: #d3c6b1;
-            --bg-gradient: linear-gradient(135deg, #4381bc, #447b7b);
+            /* Midnight Blue Sky Color Palette */
+            --header-color: #0F1C3F;
+            --footer-color: #0F1C3F;
+            --text-primary: #E6F1FF;
+            --text-secondary: #B8D1FF;
+            --accent-color: #4A90E2;
+            --accent-dark: #3A7BC8;
+            --nav-gradient: linear-gradient(90deg, #0F1C3F, #1A2B5F);
+            --bg-gradient: linear-gradient(135deg, #3498db, #2c3e50);
+            --card-bg: rgba(74, 144, 226, 0.1);
+        }
+        
+        *,
+        *:before,
+        *:after {
+            box-sizing: border-box;
         }
         
         body {
             font-family: 'Poppins', sans-serif;
-            background: var(--bg-gradient);
-            color: var(--text-color);
-            padding: 20px;
+            margin: 0;
+            padding: 0;
+            color: var(--text-primary);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
             line-height: 1.6;
+            position: relative;
+            overflow-x: hidden;
+            background: var(--bg-gradient), url('https://images.unsplash.com/photo-1519681393784-d120267933ba?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-blend-mode: overlay;
         }
         
         .container {
+            width: 90%;
             max-width: 1200px;
             margin: 0 auto;
+            padding: 40px 0;
+            position: relative;
+            z-index: 1;
         }
         
         h1 {
             text-align: center;
-            color: var(--text-light);
+            color: var(--text-primary);
             margin-bottom: 40px;
             font-size: 2.5rem;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        h1 i {
+            margin-right: 15px;
+            color: var(--accent-color);
         }
         
         .video-row {
@@ -55,29 +86,63 @@
         }
         
         .video-card {
-            background: rgba(64, 109, 139, 0.674);
-            padding: 20px;
+            background: var(--card-bg);
+            backdrop-filter: blur(10px);
             border-radius: 10px;
+            padding: 25px;
+            transition: all 0.3s ease;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s;
+            border: 1px solid rgba(74, 144, 226, 0.2);
         }
         
         .video-card:hover {
             transform: translateY(-5px);
-            background: rgba(255, 255, 255, 0.15);
+            background: rgba(74, 144, 226, 0.15);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+            border-color: rgba(74, 144, 226, 0.4);
         }
         
         .video-card h2 {
-            font-size: 1.2rem;
-            margin-top: 0;
-            border-bottom: 2px solid var(--primary-color);
+            font-size: 1.4rem;
+            margin: 0 0 15px 0;
             padding-bottom: 10px;
+            border-bottom: 2px solid var(--accent-color);
+            color: var(--text-primary);
+        }
+        
+        .video-card p {
+            color: var(--text-secondary);
+            margin: 15px 0;
         }
         
         video {
             width: 100%;
             border-radius: 5px;
-            margin-top: 10px;
+            background: rgba(0, 0, 0, 0.2);
+        }
+        
+        .drive-link {
+            display: inline-flex;
+            align-items: center;
+            margin-top: 15px;
+            color: var(--accent-color);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .drive-link:hover {
+            color: var(--text-primary);
+            text-decoration: underline;
+        }
+        
+        .drive-link i {
+            margin-left: 5px;
+            transition: all 0.3s ease;
+        }
+        
+        .drive-link:hover i {
+            transform: translateX(3px);
         }
         
         .back-button {
@@ -86,47 +151,82 @@
         }
         
         .back-button a {
-            background: var(--primary-color);
-            color: var(--text-color);
+            background: var(--accent-color);
+            color: var(--header-color);
             padding: 12px 30px;
+            font-size: 1rem;
             border-radius: 5px;
             text-decoration: none;
-            font-weight: 500;
+            transition: all 0.3s ease;
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            transition: 0.3s;
+            font-weight: 600;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
         
         .back-button a:hover {
-            background: #377a97;
+            background: var(--accent-dark);
             transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
         }
         
-        .drive-link {
-            color: #ffd700;
-            font-weight: bold;
-            text-decoration: underline;
-            font-size: 16px;
-            margin-top: 10px;
+        footer {
+            background: var(--footer-color);
+            color: var(--text-primary);
+            text-align: center;
+            padding: 20px;
+            border-top: 1px solid rgba(74, 144, 226, 0.3);
+            position: relative;
+            z-index: 1;
+            margin-top: auto;
         }
         
-        .drive-link:hover {
-            color: #36879a;
+        @media (max-width: 1024px) {
+            .row-1,
+            .row-2 {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .row-3 {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+            h1 {
+                font-size: 2rem;
+            }
+            .video-row {
+                grid-template-columns: 1fr !important;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+            .back-button a {
+                padding: 10px 20px;
+                font-size: 0.9rem;
+            }
         }
     </style>
 </head>
 
 <body>
     <div class="container">
-        <h1><i class="fas fa-video"></i>Format Video Digital</h1>
+        <h1><i class="fas fa-video"></i>Digital Video Formats</h1>
 
-        <!-- Baris 1 (3 video) -->
+        <!-- Row 1 (3 videos) -->
         <div class="video-row row-1">
             <div class="video-card">
                 <h2>MP4</h2>
                 <video controls>
                     <source src="assets2/video/1722591-hd_1920_1080_30fps (2).mp4" type="video/mp4">
+                    Your browser does not support the video tag.
                 </video>
                 <p>Format paling kompatibel untuk <strong>web streaming</strong>.</p>
             </div>
@@ -134,39 +234,39 @@
             <div class="video-card">
                 <h2>AVI</h2>
                 <video controls>
-            <source src="https://drive.google.com/uc?id=YOUR_VIDEO_ID_HERE" type="video/avi">
-            Browser tidak mendukung video.
-            </video>
-                <p> Video tidak bisa ditampilkan langsung di browser.</p>
+                    <source src="https://drive.google.com/uc?id=YOUR_VIDEO_ID_HERE" type="video/avi">
+                    Your browser does not support the video tag.
+                </video>
+                <p>Video tidak bisa ditampilkan langsung di browser.</p>
                 <a href="https://drive.google.com/file/d/1GQMG5D0OzB1ZFg3fKTn4Uqi3QosnL1E3/view?usp=drive_link" target="_blank" class="drive-link">
-            Video di Google Drive
-            </a>
+                    View on Google Drive <i class="fas fa-external-link-alt"></i>
+                </a>
             </div>
 
             <div class="video-card">
                 <h2>MOV</h2>
                 <video controls>
                     <source src="assets2/video/13450267_3840_2160_60fps.mov" type="video/mov">
-                    Browser tidak mendukung video.
+                    Your browser does not support the video tag.
                 </video>
-                <p> Video tidak bisa ditampilkan langsung di browser.</p>
+                <p>Video tidak bisa ditampilkan langsung di browser.</p>
                 <a href="https://drive.google.com/file/d/1fYUonAatGlp2nINQojccv4pBpX51PeTm/view?usp=drive_link" target="_blank" class="drive-link">
-                Video di Google Drive
+                    View on Google Drive <i class="fas fa-external-link-alt"></i>
                 </a>
             </div>
         </div>
 
-        <!-- Baris 2 (3 video) -->
+        <!-- Row 2 (3 videos) -->
         <div class="video-row row-2">
             <div class="video-card">
                 <h2>MKV</h2>
                 <video controls>
                     <source src="assets2/video/15111801-hd_1920_1080_50fps.mkv" type="video/x-matroska">
-                    Browser tidak mendukung video.
+                    Your browser does not support the video tag.
                 </video>
-                <p> Video tidak bisa ditampilkan langsung di browser.</p>
+                <p>Video tidak bisa ditampilkan langsung di browser.</p>
                 <a href="https://drive.google.com/file/d/1_bP32LGKM-kBNRd1zePdCiCiNpstZTW6/view?usp=drive_link" target="_blank" class="drive-link">
-                Video di Google Drive
+                    View on Google Drive <i class="fas fa-external-link-alt"></i>
                 </a>
             </div>
 
@@ -174,38 +274,38 @@
                 <h2>WEBM</h2>
                 <video controls>
                     <source src="assets/video/sample.webm" type="video/webm">
-                Browser tidak mendukung video.
-            </video>
-                <p> Video tidak bisa ditampilkan langsung di browser.</p>
+                    Your browser does not support the video tag.
+                </video>
+                <p>Video tidak bisa ditampilkan langsung di browser.</p>
                 <a href="https://drive.google.com/file/d/1cvCtpsZWX5nyd9g67gfGkey9-q0mB4Oi/view?usp=drive_link" target="_blank" class="drive-link">
-            Video di Google Drive
-            </a>
+                    View on Google Drive <i class="fas fa-external-link-alt"></i>
+                </a>
             </div>
 
             <div class="video-card">
                 <h2>FLV</h2>
                 <video controls>
                     <source src="assets2/video/13435691_2560_1440_24fps.flv" type="video/x-flv">
-               Browser tidak mendukung video.
-            </video>
-                <p> Video tidak bisa ditampilkan langsung di browser.</p>
+                    Your browser does not support the video tag.
+                </video>
+                <p>Video tidak bisa ditampilkan langsung di browser.</p>
                 <a href="https://drive.google.com/file/d/12A6TgfsQ1WjrxPq2irFq5VQ3o4MI1O2H/view?usp=drive_link" target="_blank" class="drive-link">
-            Video di Google Drive
-            </a>
+                    View on Google Drive <i class="fas fa-external-link-alt"></i>
+                </a>
             </div>
         </div>
 
-        <!-- Baris 3 (4 video) -->
+        <!-- Row 3 (4 videos) -->
         <div class="video-row row-3">
             <div class="video-card">
                 <h2>WMV</h2>
                 <video controls>
                     <source src="assets2/video/4328788-uhd_3840_2160_25fps.wmv" type="video/x-ms-wmv">
-                    Browser tidak mendukung video.
+                    Your browser does not support the video tag.
                 </video>
-                <p> Video tidak bisa ditampilkan langsung di browser.</p>
+                <p>Video tidak bisa ditampilkan langsung di browser.</p>
                 <a href="https://drive.google.com/file/d/1DZr7NuERSG5O0jnVJkwRURmeFUQzldpD/view?usp=drive_link" target="_blank" class="drive-link">
-                Video di Google Drive
+                    View on Google Drive <i class="fas fa-external-link-alt"></i>
                 </a>
             </div>
 
@@ -213,45 +313,56 @@
                 <h2>3GP</h2>
                 <video controls>
                     <source src="assets2/video/4328786-uhd-3840-2160-25fps_YyJYd3Qq (1).mp4" type="video/3gpp">
-               Browser tidak mendukung video.
-            </video>
-                <p> Video tidak bisa ditampilkan langsung di browser.</p>
+                    Your browser does not support the video tag.
+                </video>
+                <p>Video tidak bisa ditampilkan langsung di browser.</p>
                 <a href="https://drive.google.com/file/d/1ETzMTzPazzO_XLrjDVOvXA9XCnX1TZA5/view?usp=drive_link" target="_blank" class="drive-link">
-            Video di Google Drive
-            </a>
+                    View on Google Drive <i class="fas fa-external-link-alt"></i>
+                </a>
             </div>
 
             <div class="video-card">
                 <h2>OGV</h2>
                 <video controls>
                     <source src="assets/video/sample.ogv" type="video/ogg">
-              Browser tidak mendukung video.
-            </video>
-                <p> Video tidak bisa ditampilkan langsung di browser.</p>
+                    Your browser does not support the video tag.
+                </video>
+                <p>Video tidak bisa ditampilkan langsung di browser.</p>
                 <a href="https://drive.google.com/file/d/1j90p0Vj7-nL4sn3dqZG9sI4QJWUDgXt4/view?usp=drive_link" target="_blank" class="drive-link">
-            Video di Google Drive
-            </a>
+                    View on Google Drive <i class="fas fa-external-link-alt"></i>
+                </a>
             </div>
 
             <div class="video-card">
                 <h2>MPG</h2>
                 <video controls>
                     <source src="assets/video/sample.mpg" type="video/mpg">
-               Browser tidak mendukung video.
-            </video>
-                <p> Video tidak bisa ditampilkan langsung di browser.</p>
+                    Your browser does not support the video tag.
+                </video>
+                <p>Video tidak bisa ditampilkan langsung di browser.</p>
                 <a href="https://drive.google.com/file/d/11tj-7az-O7oYKr9FmU2oyqdFxEo83AXf/view?usp=drive_link" target="_blank" class="drive-link">
-            Video di Google Drive
-            </a>
+                    View on Google Drive <i class="fas fa-external-link-alt"></i>
+                </a>
             </div>
         </div>
 
         <div class="back-button">
-            <a href="index.html">
-                <i class="fas fa-arrow-left"></i> Home
+            <a href="projects.html">
+                <i class="fas fa-arrow-left"></i> Back to Project
             </a>
         </div>
     </div>
+
+    <footer>
+        &copy; <span id="current-year"></span> Fahry Akbar. All Rights Reserved.
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Set current year in footer
+            document.getElementById('current-year').textContent = new Date().getFullYear();
+        });
+    </script>
 </body>
 
 </html>

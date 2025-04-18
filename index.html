@@ -9,12 +9,28 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
          :root {
-            --primary-color: #459eb7;
-            --secondary-color: #44969e;
-            --text-color: #f1e1c6;
-            --text-light: #d3c6b1;
-            --bg-gradient: linear-gradient(135deg, #3b84a4, #3c6c93);
-            --nav-gradient: linear-gradient(90deg, #347dab, #3d8b92);
+            /* Midnight Blue Sky Color Palette */
+            --header-color: #0F1C3F;
+            /* Deep night blue */
+            --footer-color: #0F1C3F;
+            --text-primary: #E6F1FF;
+            /* Soft blue-white */
+            --text-secondary: #B8D1FF;
+            /* Light blue tint */
+            --accent-color: #4A90E2;
+            /* Sky blue accent */
+            --accent-dark: #3A7BC8;
+            /* Darker sky blue */
+            --nav-gradient: linear-gradient(90deg, #0F1C3F, #1A2B5F);
+            --bg-gradient: linear-gradient(135deg, #3498db, #2c3e50);
+            --card-bg: rgba(74, 144, 226, 0.1);
+            /* Semi-transparent blue */
+            --tiktok-color: #FE2C55;
+            /* TikTok brand color */
+            --instagram-color: #E1306C;
+            /* Instagram brand color */
+            --facebook-color: #1877F2;
+            /* Facebook brand color */
         }
         
         *,
@@ -27,51 +43,19 @@
             font-family: 'Poppins', sans-serif;
             margin: 0;
             padding: 0;
-            color: var(--text-color);
+            color: var(--text-primary);
             min-height: 100vh;
             display: flex;
             flex-direction: column;
             line-height: 1.6;
             position: relative;
             overflow-x: hidden;
-        }
-        /* Background Options - Choose ONE of these */
-        /* OPTION 1: Background Image */
-        
-        body {
             background: var(--bg-gradient), url('https://images.unsplash.com/photo-1519681393784-d120267933ba?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
             background-blend-mode: overlay;
         }
-        /* OPTION 2: Animated Gradient Background */
-        /*
-        body::before {
-            content: '';
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(-45deg, #3b84a4, #3c6c93, #347dab, #3d8b92);
-            background-size: 400% 400%;
-            animation: gradientBG 15s ease infinite;
-            z-index: -1;
-        }
-        */
-        /* OPTION 3: Particle.js Animation - Requires particle.js library */
-        /*
-        #particles-js {
-            position: fixed;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-            z-index: -1;
-            background: var(--bg-gradient);
-        }
-        */
         
         nav {
             display: flex;
@@ -85,6 +69,7 @@
             left: 0;
             z-index: 1000;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+            border-bottom: 1px solid rgba(74, 144, 226, 0.3);
         }
         
         .nav-container {
@@ -99,7 +84,7 @@
         .owner-name-nav {
             font-size: 24px;
             font-weight: 700;
-            color: var(--text-color);
+            color: var(--text-primary);
             letter-spacing: 1px;
             white-space: nowrap;
         }
@@ -111,7 +96,7 @@
         }
         
         nav a {
-            color: var(--text-color);
+            color: var(--text-secondary);
             text-decoration: none;
             font-size: 16px;
             font-weight: 500;
@@ -122,15 +107,14 @@
         
         nav a:hover,
         nav a.active {
-            background: rgba(147, 209, 240, 0.781);
-            color: #fff;
-            transform: scale(1.05);
+            background: rgba(74, 144, 226, 0.2);
+            color: var(--text-primary);
         }
         
         .menu-toggle {
             display: none;
             cursor: pointer;
-            color: var(--text-color);
+            color: var(--text-primary);
             font-size: 24px;
             background: none;
             border: none;
@@ -165,23 +149,21 @@
         
         .hero h1 {
             font-size: 3.5rem;
-            color: var(--text-light);
+            color: var(--text-primary);
             margin-bottom: 20px;
             line-height: 1.2;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
         }
         
         .hero p {
             font-size: 1.2rem;
             max-width: 700px;
             margin: 0 auto 30px;
-            color: var(--text-light);
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+            color: var(--text-secondary);
         }
         
         .cta-button {
-            background: var(--primary-color);
-            color: #fff;
+            background: var(--accent-color);
+            color: var(--header-color);
             padding: 12px 30px;
             font-size: 1rem;
             border-radius: 5px;
@@ -191,12 +173,12 @@
             display: inline-block;
             border: none;
             cursor: pointer;
-            font-weight: 500;
+            font-weight: 600;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
         
         .cta-button:hover {
-            background: #3d91b2;
+            background: var(--accent-dark);
             transform: scale(1.05);
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
         }
@@ -206,35 +188,71 @@
             display: flex;
             justify-content: center;
             gap: 20px;
+            flex-wrap: wrap;
         }
         
         .social-icons a {
-            color: var(--text-color);
+            color: white;
             font-size: 1.5rem;
             transition: all 0.3s ease;
             padding: 12px;
             border-radius: 50%;
-            background: rgba(30, 105, 135, 0.7);
             width: 50px;
             height: 50px;
             display: flex;
             align-items: center;
             justify-content: center;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+        /* Individual social media colors */
+        
+        .social-icons a.instagram {
+            background: linear-gradient(45deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D);
+        }
+        
+        .social-icons a.tiktok {
+            background: var(--tiktok-color);
+        }
+        
+        .social-icons a.facebook {
+            background: var(--facebook-color);
         }
         
         .social-icons a:hover {
-            background: var(--primary-color);
-            transform: scale(1.1);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            transform: scale(1.1) translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+        }
+        /* Tooltip for social icons */
+        
+        .social-icons a::after {
+            content: attr(aria-label);
+            position: absolute;
+            bottom: -40px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 0.8rem;
+            opacity: 0;
+            transition: all 0.3s ease;
+            pointer-events: none;
+            white-space: nowrap;
+        }
+        
+        .social-icons a:hover::after {
+            opacity: 1;
+            bottom: -35px;
         }
         
         footer {
-            background: rgba(68, 150, 158, 0.8);
-            color: var(--text-color);
+            background: var(--footer-color);
+            color: var(--text-primary);
             text-align: center;
             padding: 20px;
-            border-top: 1px solid rgba(179, 162, 140, 0.3);
+            border-top: 1px solid rgba(74, 144, 226, 0.3);
             position: relative;
             z-index: 1;
         }
@@ -247,9 +265,8 @@
         
         .projects-header h1 {
             font-size: 3.5rem;
-            color: var(--text-light);
+            color: var(--text-primary);
             margin-bottom: 20px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
         }
         
         .projects-grid {
@@ -260,32 +277,33 @@
         }
         
         .project-card {
-            background: rgba(255, 255, 255, 0.1);
+            background: var(--card-bg);
             backdrop-filter: blur(10px);
             border-radius: 10px;
             padding: 25px;
             transition: all 0.3s ease;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
             text-align: left;
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(74, 144, 226, 0.2);
         }
         
         .project-card:hover {
             transform: translateY(-5px);
-            background: rgba(255, 255, 255, 0.15);
+            background: rgba(74, 144, 226, 0.15);
             box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+            border-color: rgba(74, 144, 226, 0.4);
         }
         
         .project-card h3 {
-            color: var(--text-color);
+            color: var(--text-primary);
             font-size: 1.4rem;
             margin: 0 0 15px 0;
             padding-bottom: 10px;
-            border-bottom: 2px solid var(--primary-color);
+            border-bottom: 2px solid var(--accent-color);
         }
         
         .project-card p {
-            color: var(--text-light);
+            color: var(--text-secondary);
             margin-bottom: 20px;
         }
         
@@ -297,8 +315,8 @@
         }
         
         .tech-tag {
-            background: rgba(75, 140, 78, 0.3);
-            color: var(--text-color);
+            background: rgba(74, 144, 226, 0.3);
+            color: var(--text-primary);
             padding: 5px 12px;
             border-radius: 20px;
             font-size: 0.8rem;
@@ -309,14 +327,14 @@
             display: inline-flex;
             align-items: center;
             margin-top: 15px;
-            color: var(--text-color);
+            color: var(--accent-color);
             text-decoration: none;
             font-weight: 500;
             transition: all 0.3s ease;
         }
         
         .project-link:hover {
-            color: var(--primary-color);
+            color: var(--text-primary);
         }
         
         .project-link i {
@@ -334,25 +352,30 @@
             max-width: 800px;
             margin: 0 auto;
             padding: 20px;
-            background: rgba(0, 0, 0, 0.2);
+            background: rgba(15, 28, 63, 0.8);
             backdrop-filter: blur(5px);
             border-radius: 10px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(74, 144, 226, 0.2);
         }
         
         .about-section h1,
         .contact-section h1 {
             font-size: 3.5rem;
-            color: var(--text-light);
+            color: var(--text-primary);
             text-align: center;
             margin-bottom: 30px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
         }
         
         .about-section p,
         .contact-section p {
             margin-bottom: 20px;
             font-size: 1.1rem;
+            color: var(--text-secondary);
+        }
+        
+        .contact-section p strong {
+            color: var(--text-primary);
         }
         
         .back-button {
@@ -369,19 +392,6 @@
             to {
                 opacity: 1;
                 transform: translateY(0);
-            }
-        }
-        /* Background Animation */
-        
-        @keyframes gradientBG {
-            0% {
-                background-position: 0% 50%;
-            }
-            50% {
-                background-position: 100% 50%;
-            }
-            100% {
-                background-position: 0% 50%;
             }
         }
         /* Floating Animation */
@@ -415,7 +425,7 @@
                 display: none;
                 flex-direction: column;
                 width: 100%;
-                background: rgba(49, 110, 115, 0.9);
+                background: rgba(15, 28, 63, 0.95);
                 position: absolute;
                 top: 70px;
                 left: 0;
@@ -462,14 +472,19 @@
                 padding: 10px 20px;
                 font-size: 0.9rem;
             }
+            .social-icons {
+                gap: 15px;
+            }
+            .social-icons a {
+                width: 45px;
+                height: 45px;
+                font-size: 1.3rem;
+            }
         }
     </style>
 </head>
 
 <body>
-    <!-- For Particle.js option, uncomment this div and include particle.js library -->
-    <!-- <div id="particles-js"></div> -->
-
     <nav>
         <div class="nav-container">
             <div class="owner-name-nav">Fahry Akbar</div>
@@ -495,17 +510,14 @@
             </div>
 
             <div class="social-icons">
-                <a href="https://www.instagram.com/_faahry?igsh=MXQzdTZqY2NoN2ZkZQ==" target="_blank" aria-label="Instagram">
+                <a href="https://www.instagram.com/_faahry?igsh=MXQzdTZqY2NoN2ZkZQ==" target="_blank" aria-label="Instagram" class="instagram">
                     <i class="fab fa-instagram"></i>
                 </a>
-                <a href="#" target="_blank" aria-label="GitHub">
-                    <i class="fab fa-github"></i>
+                <a href="#" target="_blank" aria-label="TikTok" class="tiktok">
+                    <i class="fab fa-tiktok"></i>
                 </a>
-                <a href="#" target="_blank" aria-label="LinkedIn">
-                    <i class="fab fa-linkedin"></i>
-                </a>
-                <a href="mailto:fahryakbar1110@gmail.com" aria-label="Email">
-                    <i class="fas fa-envelope"></i>
+                <a href="#" target="_blank" aria-label="Facebook" class="facebook">
+                    <i class="fab fa-facebook-f"></i>
                 </a>
             </div>
         </div>
@@ -613,6 +625,18 @@
                 <p><strong>Phone:</strong> +62 823-8399-7569</p>
                 <p><strong>Social Media:</strong> @_faahry (Instagram)</p>
 
+                <div class="social-icons">
+                    <a href="https://www.instagram.com/_faahry?igsh=MXQzdTZqY2NoN2ZkZQ==" target="_blank" aria-label="Instagram" class="instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#" target="_blank" aria-label="TikTok" class="tiktok">
+                        <i class="fab fa-tiktok"></i>
+                    </a>
+                    <a href="#" target="_blank" aria-label="Facebook" class="facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                </div>
+
                 <div class="back-button">
                     <a href="#" class="cta-button" data-page="home">Back to Home</a>
                 </div>
@@ -624,9 +648,6 @@
         &copy; <span id="current-year"></span> Fahry Akbar. All Rights Reserved.
     </footer>
 
-    <!-- Uncomment this if using Particle.js -->
-    <!-- <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script> -->
-
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             // Set current year in footer
@@ -636,15 +657,6 @@
             const pages = document.querySelectorAll('.page');
             const menuToggle = document.querySelector('.menu-toggle');
             const navMenu = document.querySelector('.nav-links');
-
-            // Initialize Particle.js if using that option
-            /*
-            if (typeof particlesJS !== 'undefined') {
-                particlesJS.load('particles-js', 'particles.json', function() {
-                    console.log('Particles.js loaded');
-                });
-            }
-            */
 
             function showPage(pageId) {
                 // Hide all pages

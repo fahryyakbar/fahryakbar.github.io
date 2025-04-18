@@ -4,68 +4,140 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>10 Format Audio | Fahry Akbar</title>
+    <title>10 Audio Formats | Fahry Akbar</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
     <style>
          :root {
-            --primary-color: #3d8a9a;
-            --secondary-color: #328991;
-            --text-color: #f1e1c6;
-            --text-light: #d3c6b1;
-            --bg-gradient: linear-gradient(135deg, #3a8a9a, #3471a2);
+            /* Midnight Blue Sky Color Palette */
+            --header-color: #0F1C3F;
+            --footer-color: #0F1C3F;
+            --text-primary: #E6F1FF;
+            --text-secondary: #B8D1FF;
+            --accent-color: #4A90E2;
+            --accent-dark: #3A7BC8;
+            --nav-gradient: linear-gradient(90deg, #0F1C3F, #1A2B5F);
+            --bg-gradient: linear-gradient(135deg, #3498db, #2c3e50);
+            --card-bg: rgba(74, 144, 226, 0.1);
+        }
+        
+        *,
+        *:before,
+        *:after {
+            box-sizing: border-box;
         }
         
         body {
             font-family: 'Poppins', sans-serif;
-            background: var(--bg-gradient);
-            color: var(--text-color);
-            padding: 20px;
+            margin: 0;
+            padding: 0;
+            color: var(--text-primary);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
             line-height: 1.6;
+            position: relative;
+            overflow-x: hidden;
+            background: var(--bg-gradient), url('https://images.unsplash.com/photo-1519681393784-d120267933ba?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-blend-mode: overlay;
         }
         
         .container {
-            max-width: 1100px;
+            width: 90%;
+            max-width: 1200px;
             margin: 0 auto;
+            padding: 40px 0;
+            position: relative;
+            z-index: 1;
         }
         
         h1 {
             text-align: center;
-            color: var(--text-light);
+            color: var(--text-primary);
             margin-bottom: 40px;
             font-size: 2.5rem;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        h1 i {
+            margin-right: 15px;
+            color: var(--accent-color);
         }
         
         .grid-container {
             display: grid;
-            grid-template-columns: repeat(5, 1fr);
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
             gap: 30px;
+            margin: 0 auto;
         }
         
         .audio-card {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 20px;
+            background: var(--card-bg);
+            backdrop-filter: blur(10px);
             border-radius: 10px;
+            padding: 25px;
+            transition: all 0.3s ease;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s;
             text-align: center;
+            border: 1px solid rgba(74, 144, 226, 0.2);
+            min-height: 220px;
+            display: flex;
+            flex-direction: column;
         }
         
         .audio-card:hover {
             transform: translateY(-5px);
-            background: rgba(255, 255, 255, 0.15);
+            background: rgba(74, 144, 226, 0.15);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+            border-color: rgba(74, 144, 226, 0.4);
         }
         
         .audio-card h2 {
-            font-size: 1.2rem;
-            margin: 0 0 10px;
-            border-bottom: 2px solid var(--primary-color);
-            padding-bottom: 8px;
+            font-size: 1.3rem;
+            margin: 0 0 15px 0;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--accent-color);
+            color: var(--text-primary);
         }
         
         audio {
             width: 100%;
-            margin-top: 10px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+        
+        .audio-card p {
+            color: var(--text-secondary);
+            margin: 10px 0;
+            font-size: 0.9rem;
+        }
+        
+        .drive-link {
+            margin-top: auto;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+        
+        .drive-link a {
+            color: var(--accent-color);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+        }
+        
+        .drive-link a:hover {
+            color: var(--text-primary);
+            text-decoration: underline;
+        }
+        
+        .drive-link i {
+            margin-left: 5px;
+            font-size: 0.8rem;
         }
         
         .back-button {
@@ -74,126 +146,206 @@
         }
         
         .back-button a {
-            background: var(--primary-color);
-            color: var(--text-color);
+            background: var(--accent-color);
+            color: var(--header-color);
             padding: 12px 30px;
+            font-size: 1rem;
             border-radius: 5px;
             text-decoration: none;
-            font-weight: 500;
+            transition: all 0.3s ease;
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            transition: 0.3s;
+            font-weight: 600;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
         
         .back-button a:hover {
-            background: #3ea3c1;
+            background: var(--accent-dark);
             transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
         }
         
-        .audio-card .drive-link a,
-        .image-card .drive-link a {
-            color: #ffd700;
+        footer {
+            background: var(--footer-color);
+            color: var(--text-primary);
+            text-align: center;
+            padding: 20px;
+            border-top: 1px solid rgba(74, 144, 226, 0.3);
+            position: relative;
+            z-index: 1;
+            margin-top: auto;
+        }
+        
+        @media (max-width: 768px) {
+            .grid-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            h1 {
+                font-size: 2rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .grid-container {
+                grid-template-columns: 1fr;
+            }
+            h1 {
+                font-size: 1.8rem;
+            }
+            .back-button a {
+                padding: 10px 20px;
+                font-size: 0.9rem;
+            }
         }
     </style>
 </head>
 
 <body>
     <div class="container">
-        <h1><i class="fas fa-music"></i>Format Audio Digital</h1>
+        <h1><i class="fas fa-music"></i>Digital Audio Formats</h1>
 
         <div class="grid-container">
             <div class="audio-card">
                 <h2>MP3</h2>
                 <audio controls>
-                    <source src="assets/audio/Raviv Leibzirer - Variations on Ah vous dirai-je Maman - Var 5.mp3" type="audio/mpeg"
-                      onerror="this.parentElement.style.display='none'; this.parentElement.nextElementSibling.style.display='block';">
-                    Browser tidak mendukung format ini.
-                  </audio>
-                <p class="drive-link" style="display: none;">
-                    Format ini tidak bisa diputar. <a href="https://drive.google.com/yourlink" target="_blank">Dengarkan di Google Drive</a>
-                </p>
+                    <source src="assets/audio/Raviv Leibzirer - Variations on Ah vous dirai-je Maman - Var 5.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
                 <p>Lossless kualitas tinggi.</p>
+                <div class="drive-link" style="display: none;">
+                    <a href="https://drive.google.com/yourlink" target="_blank">Listen on Google Drive <i class="fas fa-external-link-alt"></i></a>
+                </div>
             </div>
 
             <div class="audio-card">
                 <h2>WAV</h2>
-                <audio controls><source src="assets/audio/Artlist Musical Logos - Angels Calling 1.wav" type="audio/wav"></audio>
+                <audio controls>
+                    <source src="assets/audio/Artlist Musical Logos - Angels Calling 1.wav" type="audio/wav">
+                    Your browser does not support the audio element.
+                </audio>
                 <p>Format audio mentah.</p>
             </div>
 
             <div class="audio-card">
                 <h2>AAC</h2>
-                <audio controls><source src="assets/audio/Raviv Leibzirer - Variations on Ah vous dirai-je Maman - Var 3.aac" type="audio/aac"></audio>
+                <audio controls>
+                    <source src="assets/audio/Raviv Leibzirer - Variations on Ah vous dirai-je Maman - Var 3.aac" type="audio/aac">
+                    Your browser does not support the audio element.
+                </audio>
                 <p>Digunakan di Apple.</p>
             </div>
 
             <div class="audio-card">
                 <h2>FLAC</h2>
-                <audio controls><source src="assets/audio/Artlist Musical Logos - Fantastic Harp.flac" type="audio/flac"></audio>
+                <audio controls>
+                    <source src="assets/audio/Artlist Musical Logos - Fantastic Harp.flac" type="audio/flac">
+                    Your browser does not support the audio element.
+                </audio>
                 <p>Lossless kualitas tinggi.</p>
             </div>
+
             <div class="audio-card">
                 <h2>OGG</h2>
-                <audio controls><source src="assets/audio/Raviv Leibzirer - Variations on Ah vous dirai-je Maman - Var 5 (1).ogg" type="audio/ogg"></audio>
+                <audio controls>
+                    <source src="assets/audio/Raviv Leibzirer - Variations on Ah vous dirai-je Maman - Var 5 (1).ogg" type="audio/ogg">
+                    Your browser does not support the audio element.
+                </audio>
                 <p>Open-source fleksibel.</p>
             </div>
 
             <div class="audio-card">
                 <h2>AIFF</h2>
-                <audio controls><source src="assets/audio/example.dsd" type="audio/dsd"></audio>
+                <audio controls>
+                    <source src="assets/audio/example.dsd" type="audio/dsd">
+                    Your browser does not support the audio element.
+                </audio>
                 <p>Audio tidak bisa diputar langsung di browser.</p>
-                <div class="drive-link"><a href="https://drive.google.com/file/d/19_QpgMsdzHleYyHag19VlMnt5fbCYKbo/view?usp=drive_link" target="_blank">Dengarkan di Google Drive</a></div>
+                <div class="drive-link">
+                    <a href="https://drive.google.com/file/d/19_QpgMsdzHleYyHag19VlMnt5fbCYKbo/view?usp=drive_link" target="_blank">Listen on Google Drive <i class="fas fa-external-link-alt"></i></a>
+                </div>
             </div>
 
             <div class="audio-card">
                 <h2>ALAC</h2>
-                <audio controls><source src="assets/audio/example.dsd" type="audio/alac"></audio>
-                <onerror="this.parentElement.style.display='none'; this.parentElement.nextElementSibling.style.display='block';>
+                <audio controls>
+                    <source src="assets/audio/example.dsd" type="audio/alac">
+                    Your browser does not support the audio element.
+                </audio>
                 <p>Audio tidak bisa diputar langsung di browser.</p>
-                <div class=" drive-link "><a href="https://drive.google.com/file/d/1H7Cqf1_Jo6BvvsGb0_BZxhjMlYp5xJdK/view?usp=drive_link " target="_blank ">Dengarkan di Google Drive</a></div>
-              </div>
-            
-            <div class="audio-card ">
+                <div class="drive-link">
+                    <a href="https://drive.google.com/file/d/1H7Cqf1_Jo6BvvsGb0_BZxhjMlYp5xJdK/view?usp=drive_link" target="_blank">Listen on Google Drive <i class="fas fa-external-link-alt"></i></a>
+                </div>
+            </div>
+
+            <div class="audio-card">
                 <h2>PCM</h2>
-                <audio controls><source src="assets/Artlist Musical Logos - Good Day.pcm " type="audio/dsd "></audio>
-                <onerror="this.parentElement.style.display='none' ; this.parentElement.nextElementSibling.style.display='block' ;>
-                    <p>Audio tidak bisa diputar langsung di browser.</p>
-                    <div class="drive-link"><a href="https://drive.google.com/file/d/1ar1mi9KWEdi5vdS1VxbmDtZBSKTCp-LP/view?usp=drive_link" target="_blank">Dengarkan di Google Drive</a></div>
+                <audio controls>
+                    <source src="assets/Artlist Musical Logos - Good Day.pcm" type="audio/dsd">
+                    Your browser does not support the audio element.
+                </audio>
+                <p>Audio tidak bisa diputar langsung di browser.</p>
+                <div class="drive-link">
+                    <a href="https://drive.google.com/file/d/1ar1mi9KWEdi5vdS1VxbmDtZBSKTCp-LP/view?usp=drive_link" target="_blank">Listen on Google Drive <i class="fas fa-external-link-alt"></i></a>
+                </div>
             </div>
 
             <div class="audio-card">
                 <h2>WMA</h2>
-                <audio controls><source src="assets/audio/example.dsd" type="audio/dsd"></audio>
-                <onerror="this.parentElement.style.display='none'; this.parentElement.nextElementSibling.style.display='block';>
+                <audio controls>
+                    <source src="assets/audio/example.dsd" type="audio/dsd">
+                    Your browser does not support the audio element.
+                </audio>
                 <p>Audio tidak bisa diputar langsung di browser.</p>
-                <div class=" drive-link "><a href="https://drive.google.com/file/d/1PpIrM34fAMZy6S8H3aqkn36DVwVERjSb/view?usp=drive_link " target="_blank ">Dengarkan di Google Drive</a></div>
+                <div class="drive-link">
+                    <a href="https://drive.google.com/file/d/1PpIrM34fAMZy6S8H3aqkn36DVwVERjSb/view?usp=drive_link" target="_blank">Listen on Google Drive <i class="fas fa-external-link-alt"></i></a>
+                </div>
             </div>
 
-            <div class="audio-card ">
+            <div class="audio-card">
                 <h2>OPUS</h2>
-                <audio controls><source src="assets/audio/example.dsd " type="audio/dsd "></audio>
-                <onerror="this.parentElement.style.display='none' ; this.parentElement.nextElementSibling.style.display='block' ;>
-                    <p>Audio tidak bisa diputar langsung di browser.</p>
-                    <div class="drive-link"><a href="https://drive.google.com/file/d/10BYURNk6lyDOorzNybr4O8nZvPKQ--04/view?usp=drive_link" target="_blank">Dengarkan di Google Drive</a></div>
+                <audio controls>
+                    <source src="assets/audio/example.dsd" type="audio/dsd">
+                    Your browser does not support the audio element.
+                </audio>
+                <p>Audio tidak bisa diputar langsung di browser.</p>
+                <div class="drive-link">
+                    <a href="https://drive.google.com/file/d/10BYURNk6lyDOorzNybr4O8nZvPKQ--04/view?usp=drive_link" target="_blank">Listen on Google Drive <i class="fas fa-external-link-alt"></i></a>
+                </div>
             </div>
-
         </div>
+
         <div class="back-button">
-            <a href="index.html">
-                <i class="fas fa-arrow-left"></i> Home
+            <a href="projects.html">
+                <i class="fas fa-arrow-left"></i> Back to Project
             </a>
         </div>
     </div>
 
+
     <script>
-        document.querySelectorAll('.audio-card').forEach(card => {
-            const audio = card.querySelector('audio');
-            const source = audio.querySelector('source');
-            const isPlayable = audio.canPlayType(source.type);
-            if (!isPlayable || isPlayable === '') {
-                card.querySelector('.drive-link').style.display = 'block';
-            }
+        document.addEventListener('DOMContentLoaded', function() {
+            // Set current year in footer
+            document.getElementById('current-year').textContent = new Date().getFullYear();
+
+            // Check audio support and show drive links if needed
+            document.querySelectorAll('.audio-card').forEach(card => {
+                const audio = card.querySelector('audio');
+                const source = audio.querySelector('source');
+                const driveLink = card.querySelector('.drive-link');
+
+                if (driveLink) {
+                    audio.onerror = function() {
+                        driveLink.style.display = 'block';
+                    };
+
+                    // Check if the browser can play the format
+                    const canPlay = audio.canPlayType(source.type);
+                    if (!canPlay || canPlay === '') {
+                        driveLink.style.display = 'block';
+                    }
+                }
+            });
         });
     </script>
 </body>

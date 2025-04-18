@@ -2,82 +2,129 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>10 Format Gambar | Fahry Akbar</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>10 Image Formats | Fahry Akbar</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
     <style>
          :root {
-            --primary-color: #409baf;
-            --secondary-color: #48a9b2;
-            --text-color: #f1e1c6;
-            --text-light: #d3c6b1;
-            --bg-gradient: linear-gradient(135deg, #397193, #387171);
+            /* Midnight Blue Sky Color Palette */
+            --header-color: #0F1C3F;
+            --footer-color: #0F1C3F;
+            --text-primary: #E6F1FF;
+            --text-secondary: #B8D1FF;
+            --accent-color: #4A90E2;
+            --accent-dark: #3A7BC8;
+            --nav-gradient: linear-gradient(90deg, #0F1C3F, #1A2B5F);
+            --bg-gradient: linear-gradient(135deg, #3498db, #2c3e50);
+            --card-bg: rgba(74, 144, 226, 0.1);
+        }
+        
+        *,
+        *:before,
+        *:after {
+            box-sizing: border-box;
         }
         
         body {
             font-family: 'Poppins', sans-serif;
-            background: var(--bg-gradient);
-            color: var(--text-color);
-            padding: 20px;
+            margin: 0;
+            padding: 0;
+            color: var(--text-primary);
+            min-height: 100vh;
             line-height: 1.6;
+            background: var(--bg-gradient), url('https://images.unsplash.com/photo-1519681393784-d120267933ba?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-blend-mode: overlay;
         }
         
         .container {
-            max-width: 1100px;
+            width: 90%;
+            max-width: 1200px;
             margin: 0 auto;
+            padding: 40px 0;
+            position: relative;
+            z-index: 1;
         }
         
         h1 {
             text-align: center;
-            color: var(--text-light);
+            color: var(--text-primary);
             margin-bottom: 40px;
             font-size: 2.5rem;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        h1 i {
+            margin-right: 15px;
+            color: var(--accent-color);
         }
         
         .projects-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
+            margin: 0 auto;
         }
         
         .project-card {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 20px;
+            background: var(--card-bg);
+            backdrop-filter: blur(10px);
             border-radius: 10px;
+            padding: 25px;
+            transition: all 0.3s ease;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s;
             text-align: center;
+            border: 1px solid rgba(74, 144, 226, 0.2);
+            min-height: 350px;
+            display: flex;
+            flex-direction: column;
         }
         
         .project-card:hover {
             transform: translateY(-5px);
-            background: rgba(255, 255, 255, 0.15);
+            background: rgba(74, 144, 226, 0.15);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+            border-color: rgba(74, 144, 226, 0.4);
         }
         
         .project-card h3 {
-            font-size: 1.3rem;
-            margin-top: 0;
-            margin-bottom: 10px;
-            border-bottom: 2px solid var(--primary-color);
+            font-size: 1.4rem;
+            margin: 0 0 15px 0;
             padding-bottom: 10px;
+            border-bottom: 2px solid var(--accent-color);
+            color: var(--text-primary);
         }
         
         .project-card img {
             width: 100%;
-            max-height: 200px;
-            object-fit: cover;
+            max-height: 180px;
+            object-fit: contain;
             border-radius: 5px;
-            margin-bottom: 10px;
+            margin-bottom: 15px;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 10px;
         }
         
-        .project-card .drive-link {
+        .drive-link {
             display: none;
+            margin-top: auto;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
         }
         
-        .project-card a {
-            color: #ffd700;
+        .drive-link a {
+            color: var(--accent-color);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .drive-link a:hover {
+            color: var(--text-primary);
             text-decoration: underline;
         }
         
@@ -87,117 +134,145 @@
         }
         
         .back-button a {
-            background: var(--primary-color);
-            color: var(--text-color);
+            background: var(--accent-color);
+            color: var(--header-color);
             padding: 12px 30px;
+            font-size: 1rem;
             border-radius: 5px;
             text-decoration: none;
-            font-weight: 500;
+            transition: all 0.3s ease;
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            transition: 0.3s;
+            font-weight: 600;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
         
         .back-button a:hover {
-            background: #3b86b4;
+            background: var(--accent-dark);
             transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        @media (max-width: 768px) {
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+            h1 {
+                font-size: 2rem;
+            }
+            .project-card {
+                min-height: 300px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .container {
+                padding: 20px 0;
+            }
+            h1 {
+                font-size: 1.8rem;
+            }
+            .project-card h3 {
+                font-size: 1.3rem;
+            }
         }
     </style>
 </head>
 
 <body>
     <div class="container">
-        <h1><i class="fas fa-image"></i>Format Gambar Digital</h1>
+        <h1><i class="fas fa-image"></i>Digital Image Formats</h1>
 
         <div class="projects-grid">
             <div class="project-card">
                 <h3>JPEG</h3>
-                <img src="assets3/gambar/jpeg.jpg" alt="Contoh JPEG" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" />
+                <img src="assets3/gambar/jpeg.jpg" alt="JPEG Example" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
                 <p class="drive-link">
-                    Gambar tidak bisa ditampilkan langsung di browser <a href="https://drive.google.com/file/d/1EXAMPLE1/view" target="_blank">Lihat di Google Drive</a>
+                    Image cannot be displayed directly in browser. <a href="https://drive.google.com/file/d/1EXAMPLE1/view" target="_blank">View on Google Drive</a>
                 </p>
             </div>
 
             <div class="project-card">
                 <h3>PNG</h3>
-                <img src="assets3/gambar/png.png" alt="Contoh PNG" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" />
+                <img src="assets3/gambar/png.png" alt="PNG Example" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
                 <p class="drive-link">
-                    Gambar tidak bisa ditampilkan langsung di browser <a href="https://drive.google.com/file/d/1EXAMPLE1/view" target="_blank">Lihat di Google Drive</a>
+                    Image cannot be displayed directly in browser. <a href="https://drive.google.com/file/d/1EXAMPLE1/view" target="_blank">View on Google Drive</a>
                 </p>
             </div>
 
             <div class="project-card">
                 <h3>WEBP</h3>
-                <img src="assets3/gambar/webp.webp" alt="Contoh WEBP" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" />
+                <img src="assets3/gambar/webp.webp" alt="WEBP Example" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
                 <p class="drive-link">
-                    Gambar tidak bisa ditampilkan langsung di browser <a href="https://drive.google.com/file/d/1EXAMPLE1/view" target="_blank">Lihat di Google Drive</a>
+                    Image cannot be displayed directly in browser. <a href="https://drive.google.com/file/d/1EXAMPLE1/view" target="_blank">View on Google Drive</a>
                 </p>
             </div>
 
             <div class="project-card">
                 <h3>AVIF</h3>
-                <img src="assets3/gambar/avif.avif" alt="Contoh AVIF" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" />
+                <img src="assets3/gambar/avif.avif" alt="AVIF Example" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
                 <p class="drive-link">
-                    Gambar tidak bisa ditampilkan langsung di browser <a href="https://drive.google.com/file/d/1EXAMPLE1/view" target="_blank">Lihat di Google Drive</a>
+                    Image cannot be displayed directly in browser. <a href="https://drive.google.com/file/d/1EXAMPLE1/view" target="_blank">View on Google Drive</a>
                 </p>
             </div>
 
             <div class="project-card">
                 <h3>SVG</h3>
-                <img src="assets3/gambar/svg.svg" alt="Contoh SVG" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" />
+                <img src="assets3/gambar/svg.svg" alt="SVG Example" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
                 <p class="drive-link">
-                    Gambar tidak bisa ditampilkan langsung di browser <a href="https://drive.google.com/file/d/1YGPMDt5QpfnjXi3fHq_AUHxaIFuhI8cL/view?usp=drive_link" target="_blank">Lihat di Google Drive</a>
+                    Image cannot be displayed directly in browser. <a href="https://drive.google.com/file/d/1YGPMDt5QpfnjXi3fHq_AUHxaIFuhI8cL/view?usp=drive_link" target="_blank">View on Google Drive</a>
                 </p>
             </div>
 
             <div class="project-card">
                 <h3>BMP</h3>
-                <img src="assets3/gambar/bmp.bmp" alt="Contoh BMP" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" />
+                <img src="assets3/gambar/bmp.bmp" alt="BMP Example" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
                 <p class="drive-link">
-                    Gambar tidak bisa ditampilkan langsung di browser <a href="https://drive.google.com/file/d/1EXAMPLE1/view" target="_blank">Lihat di Google Drive</a>
+                    Image cannot be displayed directly in browser. <a href="https://drive.google.com/file/d/1EXAMPLE1/view" target="_blank">View on Google Drive</a>
                 </p>
             </div>
 
             <div class="project-card">
                 <h3>ICO</h3>
-                <img src="assets3/gambar/ico.ico" alt="Contoh ICO" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" />
+                <img src="assets3/gambar/ico.ico" alt="ICO Example" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
                 <p class="drive-link">
-                    Gambar tidak bisa ditampilkan langsung di browser. <a href="https://drive.google.com/file/d/1q1bbK2SUzfvCRCv4JEbfG3qJO2sznaht/view?usp=drive_link" target="_blank">Lihat di Google Drive</a>
+                    Image cannot be displayed directly in browser. <a href="https://drive.google.com/file/d/1q1bbK2SUzfvCRCv4JEbfG3qJO2sznaht/view?usp=drive_link" target="_blank">View on Google Drive</a>
                 </p>
             </div>
 
             <div class="project-card">
                 <h3>EPS</h3>
-                <img src="assets3/gambar/eps.eps" alt="Contoh EPS" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" />
+                <img src="assets3/gambar/eps.eps" alt="EPS Example" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
                 <p class="drive-link">
-                    Gambar tidak bisa ditampilkan langsung di browser <a href="https://drive.google.com/file/d/1EXAMPLE1/view" target="_blank">Lihat di Google Drive</a>
+                    Image cannot be displayed directly in browser. <a href="https://drive.google.com/file/d/1EXAMPLE1/view" target="_blank">View on Google Drive</a>
                 </p>
             </div>
 
             <div class="project-card">
                 <h3>JFIF</h3>
-                <img src="assets3/gambar/jfif.jfif" alt="Contoh JFIF" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" />
+                <img src="assets3/gambar/jfif.jfif" alt="JFIF Example" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
                 <p class="drive-link">
-                    Gambar tidak bisa ditampilkan langsung di browser. <a href="https://drive.google.com/file/d/1iEH-eyQmzR85tdYO8iGMsxC3J5hksoJX/view?usp=drive_link" target="_blank">Lihat di Google Drive</a>
+                    Image cannot be displayed directly in browser. <a href="https://drive.google.com/file/d/1iEH-eyQmzR85tdYO8iGMsxC3J5hksoJX/view?usp=drive_link" target="_blank">View on Google Drive</a>
                 </p>
             </div>
 
             <div class="project-card">
                 <h3>HEIF</h3>
-                <img src="assets3/gambar/heif.heif" alt="Contoh HEIF" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" />
+                <img src="assets3/gambar/heif.heif" alt="HEIF Example" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
                 <p class="drive-link">
-                    Gambar tidak bisa ditampilkan langsung di browser <a href="https://drive.google.com/file/d/1EXAMPLE1/view" target="_blank">Lihat di Google Drive</a>
+                    Image cannot be displayed directly in browser. <a href="https://drive.google.com/file/d/1EXAMPLE1/view" target="_blank">View on Google Drive</a>
                 </p>
             </div>
         </div>
 
         <div class="back-button">
-            <a href="index.html">
-                <i class="fas fa-arrow-left"></i> Home
+            <a href="projects.html">
+                <i class="fas fa-arrow-left"></i> Back to Project
             </a>
         </div>
     </div>
+
 </body>
 
 </html>
