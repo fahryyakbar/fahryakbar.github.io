@@ -9,12 +9,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
          :root {
-            --primary-color: #459eb7;
-            --secondary-color: #44969e;
+            --primary-color: #000000;
+            --secondary-color: #369098;
             --text-color: #f1e1c6;
             --text-light: #d3c6b1;
-            --bg-gradient: linear-gradient(135deg, #3b84a4, #3c6c93);
-            --nav-gradient: linear-gradient(90deg, #347dab, #3d8b92);
+            --bg-gradient: linear-gradient(135deg, #2c4d73, #4ba4a4);
+            --nav-gradient: linear-gradient(90deg, #2f5b86, #4eacb4);
         }
         
         *,
@@ -27,51 +27,13 @@
             font-family: 'Poppins', sans-serif;
             margin: 0;
             padding: 0;
+            background: var(--bg-gradient);
             color: var(--text-color);
             min-height: 100vh;
             display: flex;
             flex-direction: column;
             line-height: 1.6;
-            position: relative;
-            overflow-x: hidden;
         }
-        /* Background Options - Choose ONE of these */
-        /* OPTION 1: Background Image */
-        
-        body {
-            background: var(--bg-gradient), url('https://images.unsplash.com/photo-1519681393784-d120267933ba?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            background-blend-mode: overlay;
-        }
-        /* OPTION 2: Animated Gradient Background */
-        /*
-        body::before {
-            content: '';
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(-45deg, #3b84a4, #3c6c93, #347dab, #3d8b92);
-            background-size: 400% 400%;
-            animation: gradientBG 15s ease infinite;
-            z-index: -1;
-        }
-        */
-        /* OPTION 3: Particle.js Animation - Requires particle.js library */
-        /*
-        #particles-js {
-            position: fixed;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-            z-index: -1;
-            background: var(--bg-gradient);
-        }
-        */
         
         nav {
             display: flex;
@@ -122,7 +84,7 @@
         
         nav a:hover,
         nav a.active {
-            background: rgba(147, 209, 240, 0.781);
+            background: rgba(94, 147, 182, 0.637);
             color: #fff;
             transform: scale(1.05);
         }
@@ -143,8 +105,6 @@
             margin: 100px auto 0;
             padding: 40px 0;
             flex: 1;
-            position: relative;
-            z-index: 1;
         }
         
         .page {
@@ -159,8 +119,6 @@
         .hero {
             text-align: center;
             padding: 40px 0;
-            position: relative;
-            z-index: 1;
         }
         
         .hero h1 {
@@ -168,7 +126,6 @@
             color: var(--text-light);
             margin-bottom: 20px;
             line-height: 1.2;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
         }
         
         .hero p {
@@ -176,7 +133,6 @@
             max-width: 700px;
             margin: 0 auto 30px;
             color: var(--text-light);
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
         }
         
         .cta-button {
@@ -192,11 +148,10 @@
             border: none;
             cursor: pointer;
             font-weight: 500;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
         
         .cta-button:hover {
-            background: #3d91b2;
+            background: #257b9e;
             transform: scale(1.05);
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
         }
@@ -214,29 +169,25 @@
             transition: all 0.3s ease;
             padding: 12px;
             border-radius: 50%;
-            background: rgba(30, 105, 135, 0.7);
+            background: rgba(71, 137, 161, 0.696);
             width: 50px;
             height: 50px;
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
         
         .social-icons a:hover {
             background: var(--primary-color);
             transform: scale(1.1);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
         }
         
         footer {
-            background: rgba(68, 150, 158, 0.8);
+            background: var(--secondary-color);
             color: var(--text-color);
             text-align: center;
             padding: 20px;
-            border-top: 1px solid rgba(179, 162, 140, 0.3);
-            position: relative;
-            z-index: 1;
+            border-top: 1px solid rgba(92, 155, 199, 0.703);
         }
         /* Projects Page Styles */
         
@@ -249,7 +200,6 @@
             font-size: 3.5rem;
             color: var(--text-light);
             margin-bottom: 20px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
         }
         
         .projects-grid {
@@ -261,13 +211,11 @@
         
         .project-card {
             background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
             border-radius: 10px;
             padding: 25px;
             transition: all 0.3s ease;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
             text-align: left;
-            border: 1px solid rgba(255, 255, 255, 0.1);
         }
         
         .project-card:hover {
@@ -297,7 +245,7 @@
         }
         
         .tech-tag {
-            background: rgba(75, 140, 78, 0.3);
+            background: rgba(87, 154, 179, 0.705);
             color: var(--text-color);
             padding: 5px 12px;
             border-radius: 20px;
@@ -334,10 +282,6 @@
             max-width: 800px;
             margin: 0 auto;
             padding: 20px;
-            background: rgba(0, 0, 0, 0.2);
-            backdrop-filter: blur(5px);
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         }
         
         .about-section h1,
@@ -346,7 +290,6 @@
             color: var(--text-light);
             text-align: center;
             margin-bottom: 30px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
         }
         
         .about-section p,
@@ -371,36 +314,6 @@
                 transform: translateY(0);
             }
         }
-        /* Background Animation */
-        
-        @keyframes gradientBG {
-            0% {
-                background-position: 0% 50%;
-            }
-            50% {
-                background-position: 100% 50%;
-            }
-            100% {
-                background-position: 0% 50%;
-            }
-        }
-        /* Floating Animation */
-        
-        .floating {
-            animation: floating 3s ease-in-out infinite;
-        }
-        
-        @keyframes floating {
-            0% {
-                transform: translateY(0px);
-            }
-            50% {
-                transform: translateY(-10px);
-            }
-            100% {
-                transform: translateY(0px);
-            }
-        }
         /* Responsive Styles */
         
         @media (max-width: 768px) {
@@ -415,7 +328,7 @@
                 display: none;
                 flex-direction: column;
                 width: 100%;
-                background: rgba(49, 110, 115, 0.9);
+                background: rgba(86, 167, 174, 0.9);
                 position: absolute;
                 top: 70px;
                 left: 0;
@@ -445,10 +358,6 @@
             .projects-grid {
                 grid-template-columns: 1fr;
             }
-            .about-section,
-            .contact-section {
-                padding: 15px;
-            }
         }
         
         @media (max-width: 480px) {
@@ -467,9 +376,6 @@
 </head>
 
 <body>
-    <!-- For Particle.js option, uncomment this div and include particle.js library -->
-    <!-- <div id="particles-js"></div> -->
-
     <nav>
         <div class="nav-container">
             <div class="owner-name-nav">Fahry Akbar</div>
@@ -486,46 +392,6 @@
     </nav>
 
     <div class="container">
-        <!-- Home Page -->
-        <div id="home" class="page active">
-            <div class="hero">
-                <h1>Welcome to My Portfolio</h1>
-                <p>UI/UX Enthusiast | Web Development | AI Explorer</p>
-                <a href="#" class="cta-button floating" data-page="projects">View My Projects</a>
-            </div>
-
-            <div class="social-icons">
-                <a href="https://www.instagram.com/_faahry?igsh=MXQzdTZqY2NoN2ZkZQ==" target="_blank" aria-label="Instagram">
-                    <i class="fab fa-instagram"></i>
-                </a>
-                <a href="#" target="_blank" aria-label="GitHub">
-                    <i class="fab fa-github"></i>
-                </a>
-                <a href="#" target="_blank" aria-label="LinkedIn">
-                    <i class="fab fa-linkedin"></i>
-                </a>
-                <a href="mailto:fahryakbar1110@gmail.com" aria-label="Email">
-                    <i class="fas fa-envelope"></i>
-                </a>
-            </div>
-        </div>
-
-        <!-- About Page -->
-        <div id="about" class="page">
-            <div class="about-section">
-                <h1>About Me</h1>
-                <p>Nama saya Fahry Akbar, seorang mahasiswa di Universitas Riau, yang sedang belajar dan mengembangkan keterampilan di bidang teknologi Saya memiliki minat dalam desain UI/UX, website dan AI. Selain itu, saya juga sedang mempelajari beberapa
-                    bahasa pemrograman untuk mendukung progres pengembangan web saya.</p>
-                <p>Selain keterampilan teknis, saya juga tertarik dengan public speaking, khususnya dalam hal presentasi. Selama ini, saya sudah beberapa kali melakukan presentasi di lingkungan akademik, dan saya ingin terus meningkatkan kemampuan saya dalam
-                    berbicara di depan umum.</p>
-                <p>Saya berharap bisa mendapatkan lebih banyak pengalaman dengan berbicara di seminar atau komunitas teknologi, terutama dalam topik UI/UX dan web development. Saat ini, saya masih dalam tahap belajar dan ingin terus berkembang.</p>
-
-                <div class="back-button">
-                    <a href="#" class="cta-button" data-page="home">Back to Home</a>
-                </div>
-            </div>
-        </div>
-
         <!-- Projects Page -->
         <div id="projects" class="page">
             <div class="projects-header">
@@ -537,8 +403,6 @@
                 <div class="project-card">
                     <h3>TEKS</h3>
                     <div class="project-tech">
-                        <span class="tech-tag">Typography</span>
-                        <span class="tech-tag">Design</span>
                     </div>
                     <p>Teks adalah kumpulan kata atau kalimat yang menyampaikan pesan atau informasi kepada pembaca atau pendengar.</p>
                     <a href="teks.html" class="project-link">View Details <i class="fas fa-arrow-right"></i></a>
@@ -548,8 +412,6 @@
                 <div class="project-card">
                     <h3>GAMBAR</h3>
                     <div class="project-tech">
-                        <span class="tech-tag">Visual Design</span>
-                        <span class="tech-tag">Graphics</span>
                     </div>
                     <p>Gambar adalah representasi visual dari suatu objek, konsep, atau ide yang dibuat dengan menggunakan berbagai medium seperti pensil, cat, tinta, kamera, atau perangkat lunak komputer.</p>
                     <a href="gambar.html" class="project-link">View Details <i class="fas fa-arrow-right"></i></a>
@@ -559,8 +421,6 @@
                 <div class="project-card">
                     <h3>AUDIO</h3>
                     <div class="project-tech">
-                        <span class="tech-tag">Sound</span>
-                        <span class="tech-tag">Editing</span>
                     </div>
                     <p>Audio adalah representasi suara yang diubah dari sinyal analog menjadi sinyal digital melalui proses konversi</p>
                     <a href="audio.html" class="project-link">View Details <i class="fas fa-arrow-right"></i></a>
@@ -570,8 +430,6 @@
                 <div class="project-card">
                     <h3>VIDEO</h3>
                     <div class="project-tech">
-                        <span class="tech-tag">Editing</span>
-                        <span class="tech-tag">Production</span>
                     </div>
                     <p>Video adalah media visual yang menggabungkan gambar bergerak dan suara.</p>
                     <a href="video.html" class="project-link">View Details <i class="fas fa-arrow-right"></i></a>
@@ -581,8 +439,6 @@
                 <div class="project-card">
                     <h3>ANIMASI</h3>
                     <div class="project-tech">
-                        <span class="tech-tag">Motion</span>
-                        <span class="tech-tag">Design</span>
                     </div>
                     <p>Animasi adalah gambar yang bergerak, seolah-olah hidup, yang dibuat dari kumpulan gambar atau objek</p>
                     <a href="animasi.html" class="project-link">View Details <i class="fas fa-arrow-right"></i></a>
@@ -592,8 +448,6 @@
                 <div class="project-card">
                     <h3>LAPORAN</h3>
                     <div class="project-tech">
-                        <span class="tech-tag">Documentation</span>
-                        <span class="tech-tag">Report</span>
                     </div>
                     <p>laporan UTS Sistem MUltimedia : Teks, Gambar, Audio, Video, dan Animasi</p>
                     <a href="assets/laporan/Fahry Akbar Raksanjani_Sistem Multimedia.pdf" target="_blank" class="project-link">Open PDF <i class="fas fa-file-pdf"></i></a>
@@ -601,20 +455,20 @@
             </div>
 
             <div class="back-button">
-                <a href="#" class="cta-button" data-page="home">Back to Home</a>
+                <a href="#" class="cta-button" data-page="home">Home</a>
             </div>
         </div>
 
         <div id="contact" class="page">
             <div class="contact-section">
                 <h1>Contact Me</h1>
-                <p>Feel free to reach out for collaborations or just to say hello!</p>
+                <p></p>
                 <p><strong>Email:</strong> fahryakbar1110@gmail.com</p>
                 <p><strong>Phone:</strong> +62 823-8399-7569</p>
-                <p><strong>Social Media:</strong> @_faahry (Instagram)</p>
+                <p><strong>Social Media:</strong> Instagram.</p>
 
                 <div class="back-button">
-                    <a href="#" class="cta-button" data-page="home">Back to Home</a>
+                    <a href="#" class="cta-button" data-page="home">Home</a>
                 </div>
             </div>
         </div>
@@ -624,12 +478,9 @@
         &copy; <span id="current-year"></span> Fahry Akbar. All Rights Reserved.
     </footer>
 
-    <!-- Uncomment this if using Particle.js -->
-    <!-- <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script> -->
-
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // Set current year in footer
+
             document.getElementById('current-year').textContent = new Date().getFullYear();
 
             const navLinks = document.querySelectorAll('[data-page]');
@@ -637,40 +488,26 @@
             const menuToggle = document.querySelector('.menu-toggle');
             const navMenu = document.querySelector('.nav-links');
 
-            // Initialize Particle.js if using that option
-            /*
-            if (typeof particlesJS !== 'undefined') {
-                particlesJS.load('particles-js', 'particles.json', function() {
-                    console.log('Particles.js loaded');
-                });
-            }
-            */
-
             function showPage(pageId) {
-                // Hide all pages
+
                 pages.forEach(page => {
                     page.classList.remove('active');
                 });
 
-                // Show selected page
                 document.getElementById(pageId).classList.add('active');
 
-                // Update active nav link
                 navLinks.forEach(link => {
                     link.classList.toggle('active', link.getAttribute('data-page') === pageId);
                 });
 
-                // Close mobile menu if open
                 navMenu.classList.remove('active');
 
-                // Scroll to top
                 window.scrollTo({
                     top: 0,
                     behavior: 'smooth'
                 });
             }
 
-            // Nav link click handlers
             navLinks.forEach(link => {
                 link.addEventListener('click', function(e) {
                     e.preventDefault();
@@ -679,19 +516,16 @@
                 });
             });
 
-            // Mobile menu toggle
             menuToggle.addEventListener('click', function() {
                 navMenu.classList.toggle('active');
             });
 
-            // Close mobile menu when clicking outside
             document.addEventListener('click', function(e) {
                 if (!e.target.closest('.nav-container') && navMenu.classList.contains('active')) {
                     navMenu.classList.remove('active');
                 }
             });
 
-            // Show home page by default
             showPage('home');
         });
     </script>
