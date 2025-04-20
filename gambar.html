@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>10 Image Formats | Fahry Akbar</title>
+    <title>Format Gambar | Fahry Akbar</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
     <style>
@@ -153,6 +153,50 @@
             transform: scale(1.05);
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
         }
+        /* Table Styles */
+        
+        .comparison-table {
+            width: 100%;
+            margin: 40px 0;
+            border-collapse: collapse;
+            background: rgba(15, 28, 63, 0.7);
+            backdrop-filter: blur(10px);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .comparison-table th {
+            background: var(--accent-color);
+            color: var(--header-color);
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+        }
+        
+        .comparison-table td {
+            padding: 12px 15px;
+            border-bottom: 1px solid rgba(74, 144, 226, 0.2);
+        }
+        
+        .comparison-table tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .comparison-table tr:hover {
+            background: rgba(74, 144, 226, 0.1);
+        }
+        
+        .table-container {
+            margin: 40px 0;
+        }
+        
+        .table-title {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+            color: var(--text-primary);
+        }
         
         @media (max-width: 768px) {
             .projects-grid {
@@ -163,6 +207,10 @@
             }
             .project-card {
                 min-height: 300px;
+            }
+            .comparison-table {
+                display: block;
+                overflow-x: auto;
             }
         }
         
@@ -175,6 +223,11 @@
             }
             .project-card h3 {
                 font-size: 1.3rem;
+            }
+            .comparison-table th,
+            .comparison-table td {
+                padding: 8px 10px;
+                font-size: 0.9rem;
             }
         }
     </style>
@@ -264,6 +317,116 @@
                     Image cannot be displayed directly in browser. <a href="https://drive.google.com/file/d/1EXAMPLE1/view" target="_blank">View on Google Drive</a>
                 </p>
             </div>
+        </div>
+
+        <!-- Image Format Comparison Table - Moved to bottom -->
+        <div class="table-container">
+            <h2 class="table-title">Perbandingan Format Gambar</h2>
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>FORMAT</th>
+                        <th>TIPE</th>
+                        <th>KOMPRESI</th>
+                        <th>TRANSPARANSI</th>
+                        <th>UKURAN FILE</th>
+                        <th>KUALITAS GAMBAR</th>
+                        <th>KASUS PENGGUNAAN</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>JPEG</td>
+                        <td>Raster</td>
+                        <td>Lossy</td>
+                        <td>Tidak</td>
+                        <td>Kecil</td>
+                        <td>Baik, tapi bisa menurun</td>
+                        <td>Foto, web, media sosial</td>
+                    </tr>
+                    <tr>
+                        <td>PNG</td>
+                        <td>Raster</td>
+                        <td>Lossless</td>
+                        <td>Ya</td>
+                        <td>Sedang</td>
+                        <td>Sangat baik untuk teks/grafik</td>
+                        <td>Logo, banner, UI, web</td>
+                    </tr>
+                    <tr>
+                        <td>GIF</td>
+                        <td>Raster</td>
+                        <td>Lossless</td>
+                        <td>Ya</td>
+                        <td>Kecil</td>
+                        <td>Terbatas (256 warna)</td>
+                        <td>Animasi ringan, ikon sederhana</td>
+                    </tr>
+                    <tr>
+                        <td>WebP</td>
+                        <td>Raster</td>
+                        <td>Lossy/Lossless</td>
+                        <td>Ya</td>
+                        <td>Lebih kecil dari JPG</td>
+                        <td>Sangat baik, modern</td>
+                        <td>Optimasi gambar web</td>
+                    </tr>
+                    <tr>
+                        <td>TIFF</td>
+                        <td>Raster</td>
+                        <td>Lossless</td>
+                        <td>Ya</td>
+                        <td>Sangat besar</td>
+                        <td>Sempurna</td>
+                        <td>Cetak resolusi tinggi</td>
+                    </tr>
+                    <tr>
+                        <td>SVG</td>
+                        <td>Vektor</td>
+                        <td>Tidak ada</td>
+                        <td>Ya</td>
+                        <td>Sangat kecil</td>
+                        <td>Tak terbatas</td>
+                        <td>Logo, ikon, ilustrasi</td>
+                    </tr>
+                    <tr>
+                        <td>SVG</td>
+                        <td>Vektor</td>
+                        <td>Tidak ada</td>
+                        <td>Ya</td>
+                        <td>Sangat kecil</td>
+                        <td>Tak terbatas</td>
+                        <td>Logo, ikon, ilustrasi</td>
+                    </tr>
+                    <tr>
+                        <td>SVG</td>
+                        <td>Vektor</td>
+                        <td>Tidak ada</td>
+                        <td>Ya</td>
+                        <td>Sangat kecil</td>
+                        <td>Tak terbatas</td>
+                        <td>Logo, ikon, ilustrasi</td>
+                    </tr>
+                    <tr>
+                        <td>SVG</td>
+                        <td>Vektor</td>
+                        <td>Tidak ada</td>
+                        <td>Ya</td>
+                        <td>Sangat kecil</td>
+                        <td>Tak terbatas</td>
+                        <td>Logo, ikon, ilustrasi</td>
+                    </tr>
+                    <tr>
+                        <td>SVG</td>
+                        <td>Vektor</td>
+                        <td>Tidak ada</td>
+                        <td>Ya</td>
+                        <td>Sangat kecil</td>
+                        <td>Tak terbatas</td>
+                        <td>Logo, ikon, ilustrasi</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
 
         <div class="back-button">

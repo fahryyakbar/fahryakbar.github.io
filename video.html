@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>10 Video Formats | Fahry Akbar</title>
+    <title>Format Video | Fahry Akbar</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
     <style>
@@ -181,6 +181,51 @@
             z-index: 1;
             margin-top: auto;
         }
+        /* New comparison table styles */
+        
+        .comparison-section {
+            margin: 60px 0;
+        }
+        
+        .comparison-section h2 {
+            text-align: center;
+            color: var(--text-primary);
+            margin-bottom: 30px;
+            font-size: 2rem;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 0 auto;
+            background: var(--card-bg);
+            backdrop-filter: blur(10px);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .comparison-table th,
+        .comparison-table td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid rgba(74, 144, 226, 0.2);
+        }
+        
+        .comparison-table th {
+            background-color: rgba(74, 144, 226, 0.2);
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+        
+        .comparison-table tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .comparison-table tr:hover {
+            background-color: rgba(74, 144, 226, 0.1);
+        }
         
         @media (max-width: 1024px) {
             .row-1,
@@ -189,6 +234,10 @@
             }
             .row-3 {
                 grid-template-columns: repeat(2, 1fr);
+            }
+            .comparison-table {
+                display: block;
+                overflow-x: auto;
             }
         }
         
@@ -202,6 +251,11 @@
             .video-row {
                 grid-template-columns: 1fr !important;
             }
+            .comparison-table th,
+            .comparison-table td {
+                padding: 10px 8px;
+                font-size: 0.9rem;
+            }
         }
         
         @media (max-width: 480px) {
@@ -211,6 +265,11 @@
             .back-button a {
                 padding: 10px 20px;
                 font-size: 0.9rem;
+            }
+            .comparison-table th,
+            .comparison-table td {
+                padding: 8px 5px;
+                font-size: 0.8rem;
             }
         }
     </style>
@@ -344,6 +403,105 @@
                     View on Google Drive <i class="fas fa-external-link-alt"></i>
                 </a>
             </div>
+        </div>
+
+        <!-- New comparison table section -->
+        <div class="comparison-section">
+            <h2>Perbandingan Format Video</h2>
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>FORMAT</th>
+                        <th>JENIS</th>
+                        <th>KUALITAS</th>
+                        <th>UKURAN</th>
+                        <th>KOMPATIBILITAS</th>
+                        <th>PENGGUNAAN IDEAL</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>MP4</td>
+                        <td>Lossy/Lossless</td>
+                        <td>Baik sampai sangat baik</td>
+                        <td>Kecil sampai sedang</td>
+                        <td>Sangat tinggi</td>
+                        <td>Web streaming, perangkat mobile</td>
+                    </tr>
+                    <tr>
+                        <td>AVI</td>
+                        <td>Lossless</td>
+                        <td>Sangat baik</td>
+                        <td>Besar</td>
+                        <td>Tinggi</td>
+                        <td>Editing video, penyimpanan lokal</td>
+                    </tr>
+                    <tr>
+                        <td>MOV</td>
+                        <td>Lossy/Lossless</td>
+                        <td>Sangat baik</td>
+                        <td>Sedang sampai besar</td>
+                        <td>Tinggi (terutama Apple)</td>
+                        <td>Produksi video profesional</td>
+                    </tr>
+                    <tr>
+                        <td>MKV</td>
+                        <td>Lossless</td>
+                        <td>Sempurna</td>
+                        <td>Besar</td>
+                        <td>Menengah</td>
+                        <td>Penyimpanan film kualitas tinggi</td>
+                    </tr>
+                    <tr>
+                        <td>WEBM</td>
+                        <td>Lossy</td>
+                        <td>Baik</td>
+                        <td>Kecil</td>
+                        <td>Menengah (browser modern)</td>
+                        <td>Streaming web, HTML5 video</td>
+                    </tr>
+                    <tr>
+                        <td>FLV</td>
+                        <td>Lossy</td>
+                        <td>Sedang</td>
+                        <td>Kecil</td>
+                        <td>Rendah (usang)</td>
+                        <td>Streaming lama (Flash)</td>
+                    </tr>
+                    <tr>
+                        <td>WMV</td>
+                        <td>Lossy</td>
+                        <td>Sedang</td>
+                        <td>Kecil sampai sedang</td>
+                        <td>Menengah (Windows)</td>
+                        <td>Presentasi bisnis, Windows</td>
+                    </tr>
+                    <tr>
+                        <td>3GP</td>
+                        <td>Lossy</td>
+                        <td>Rendah</td>
+                        <td>Sangat kecil</td>
+                        <td>Menengah</td>
+                        <td>Ponsel lama, MMS</td>
+                    </tr>
+                    <tr>
+                        <td>3GP</td>
+                        <td>Lossy</td>
+                        <td>Rendah</td>
+                        <td>Sangat kecil</td>
+                        <td>Menengah</td>
+                        <td>Ponsel lama, MMS</td>
+                    </tr>
+                    <tr>
+                        <td>3GP</td>
+                        <td>Lossy</td>
+                        <td>Rendah</td>
+                        <td>Sangat kecil</td>
+                        <td>Menengah</td>
+                        <td>Ponsel lama, MMS</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
 
         <div class="back-button">
